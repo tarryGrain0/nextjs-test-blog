@@ -3,6 +3,24 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --secondary: #666666;
+  --border: #eeeeee;
+  --link: #0070f3;
+  --link-hover: #0051a2;
+  --code-bg: #f1f1f1;
+  --pre-bg: #f6f8fa;
+  --blockquote-border: #dddddd;
+  --table-header-bg: #f6f8fa;
+  --table-border: #dddddd;
+  --avatar-border: #dddddd;
+  
+  /* 見出しカラー */
+  --h1-color: #e74c3c;
+  --h2-color: #3498db;
+  --h3-color: #2ecc71;
+  --h4-color: #f39c12;
+  --h5-color: #9b59b6;
+  --h6-color: #34495e;
 }
 
 @theme inline {
@@ -16,6 +34,24 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --secondary: #a0a0a0;
+    --border: #333333;
+    --link: #58a6ff;
+    --link-hover: #79c0ff;
+    --code-bg: #2d3748;
+    --pre-bg: #1a202c;
+    --blockquote-border: #4a5568;
+    --table-header-bg: #2d3748;
+    --table-border: #4a5568;
+    --avatar-border: #4a5568;
+    
+    /* ダークモード用見出しカラー */
+    --h1-color: #ff6b6b;
+    --h2-color: #4ecdc4;
+    --h3-color: #45b7d1;
+    --h4-color: #f9ca24;
+    --h5-color: #a55eea;
+    --h6-color: #95afc0;
   }
 }
 
@@ -34,7 +70,7 @@ body {
 .post-item {
   margin-bottom: 2rem;
   padding: 1rem;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--border);
 }
 
 .post-item h2 {
@@ -42,16 +78,16 @@ body {
 }
 
 .post-item h2 a {
-  color: inherit;
+  color: var(--link);
   text-decoration: none;
 }
 
 .post-item h2 a:hover {
-  color: #0070f3;
+  color: var(--link-hover);
 }
 
 .post-item small {
-  color: #666;
+  color: var(--secondary);
 }
 
 /* ナビゲーション用のリストのみスタイルを無効化 */
@@ -68,7 +104,7 @@ article {
 .post-meta {
   margin-bottom: 2rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--border);
 }
 
 .author-info {
@@ -82,12 +118,12 @@ article {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  border: 2px solid #ddd;
+  border: 2px solid var(--avatar-border);
 }
 
 .author-name {
   font-size: 0.9rem;
-  color: #666;
+  color: var(--secondary);
   font-weight: 500;
 }
 
@@ -116,12 +152,12 @@ article {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  border: 1px solid #ddd;
+  border: 1px solid var(--avatar-border);
 }
 
 .post-author-name {
   font-size: 0.8rem;
-  color: #666;
+  color: var(--secondary);
   font-weight: 500;
 }
 

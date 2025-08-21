@@ -50,7 +50,7 @@ export function getPostBySlug(slug: string): Post {
         date: data.date || "",
         contentHtml,
     };
-    
+
     // authorとavatarがあるときのみ追加
     if (data.author) {
         post.author = data.author;
@@ -58,7 +58,7 @@ export function getPostBySlug(slug: string): Post {
     if (data.avatar) {
         post.avatar = data.avatar;
     }
-    
+
     return post;
 }
 
@@ -77,7 +77,7 @@ export function getAllPosts(): PostMeta[] {
                     title: data.title || slug,
                     date: data.date || "",
                 };
-                
+
                 // authorとavatarがあるときのみ追加
                 if (data.author) {
                     post.author = data.author;
@@ -85,7 +85,7 @@ export function getAllPosts(): PostMeta[] {
                 if (data.avatar) {
                     post.avatar = data.avatar;
                 }
-                
+
                 return post;
             });
     } catch (error) {

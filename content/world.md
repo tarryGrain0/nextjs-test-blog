@@ -11,6 +11,7 @@ avatar: "/images/avatar.svg"
 10/16〜10/18の３日間に渡って開催されたHardening Convolutionsに初めて参加してきました。
 今回は、Hardening本戦に参加した経緯や経験について振り返ってまとめておこうと思います。
 ![](https://storage.googleapis.com/zenn-user-upload/cd754e249497-20241215.jpeg)
+![](https://storage.cloud.google.com/hp-image/test_page/devin.png)
 
 ### 1.　Hardening とは
 ハードニング競技会は、限られた時間内で脆弱性に対応し、攻撃からシステムを**守る**能力を競うため、セキュリティの知識や技術、インシデント発生時の対応や報告、そしてチームワークが必要になります。

@@ -21,8 +21,8 @@ export default function PostPage({ post }: Props) {
                         {post.author && (
                             <div className="author-info">
                                 {post.avatar && (
-                                    <img 
-                                        src={post.avatar} 
+                                    <img
+                                        src={post.avatar}
                                         alt={post.author}
                                         className="author-avatar"
                                     />
