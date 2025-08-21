@@ -3,6 +3,12 @@
 import * as fs from "fs";
 import * as path from "path";
 import matter from "gray-matter";
+import { unified } from "unified";
+import remarkParse from "remark-parse";
+import remarkGfm from "remark-gfm";
+import remarkRehype from "remark-rehype";
+import rehypeStringify from "rehype-stringify";
+import rehypeHighlight from "rehype-highlight";
 
 export type PostMeta = {
     slug: string;
@@ -26,11 +32,21 @@ export function getPostBySlug(slug: string): Post {
     const fileContents = fs.readFileSync(fullPath, "utf8");
     const { data, content } = matter(fileContents);
 
+    // MarkdownをHTMLに変換
+    const contentHtml = unified()
+        .use(remarkParse)
+        .use(remarkGfm) // GitHub Flavored Markdown（テーブル、チェックボックスなど）
+        .use(remarkRehype)
+        .use(rehypeHighlight) // シンタックスハイライト
+        .use(rehypeStringify)
+        .processSync(content)
+        .toString();
+
     return {
         slug: realSlug,
         title: data.title || realSlug,
         date: data.date || "",
-        contentHtml: content, // 簡単のため、Markdownのままにします
+        contentHtml,
     };
 }
 
