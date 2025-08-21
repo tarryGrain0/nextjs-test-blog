@@ -19,10 +19,26 @@ export default function Home({ posts }: Props) {
         <ul className="post-list">
           {posts.map((p) => (
             <li key={p.slug} className="post-item">
-              <h2>
-                <Link href={`/posts/${p.slug}/`}>{p.title}</Link>
-              </h2>
-              <small>{new Date(p.date).toLocaleDateString()}</small>
+              <div className="post-header">
+                <h2>
+                  <Link href={`/posts/${p.slug}/`}>{p.title}</Link>
+                </h2>
+                <div className="post-info">
+                  <small>{new Date(p.date).toLocaleDateString()}</small>
+                  {p.author && (
+                    <div className="post-author">
+                      {p.avatar && (
+                        <img 
+                          src={p.avatar} 
+                          alt={p.author}
+                          className="post-author-avatar"
+                        />
+                      )}
+                      <span className="post-author-name">{p.author}</span>
+                    </div>
+                  )}
+                </div>
+              </div>
             </li>
           ))}
         </ul>

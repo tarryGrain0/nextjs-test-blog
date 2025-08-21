@@ -16,7 +16,21 @@ export default function PostPage({ post }: Props) {
             <main className="container">
                 <article>
                     <h1>{post.title}</h1>
-                    <small>{new Date(post.date).toLocaleDateString()}</small>
+                    <div className="post-meta">
+                        <small>{new Date(post.date).toLocaleDateString()}</small>
+                        {post.author && (
+                            <div className="author-info">
+                                {post.avatar && (
+                                    <img 
+                                        src={post.avatar} 
+                                        alt={post.author}
+                                        className="author-avatar"
+                                    />
+                                )}
+                                <span className="author-name">執筆者: {post.author}</span>
+                            </div>
+                        )}
+                    </div>
                     <div
                         className="markdown-body"
                         dangerouslySetInnerHTML={{ __html: post.contentHtml }}

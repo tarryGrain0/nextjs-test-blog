@@ -14,6 +14,8 @@ export type PostMeta = {
     slug: string;
     title: string;
     date: string;
+    author?: string;
+    avatar?: string;
 };
 
 export type Post = PostMeta & {
@@ -42,12 +44,22 @@ export function getPostBySlug(slug: string): Post {
         .processSync(content)
         .toString();
 
-    return {
+    const post: Post = {
         slug: realSlug,
         title: data.title || realSlug,
         date: data.date || "",
         contentHtml,
     };
+    
+    // authorとavatarがあるときのみ追加
+    if (data.author) {
+        post.author = data.author;
+    }
+    if (data.avatar) {
+        post.avatar = data.avatar;
+    }
+    
+    return post;
 }
 
 export function getAllPosts(): PostMeta[] {
@@ -60,11 +72,21 @@ export function getAllPosts(): PostMeta[] {
                 const fullPath = path.join(postsDirectory, fileName);
                 const fileContents = fs.readFileSync(fullPath, "utf8");
                 const { data } = matter(fileContents);
-                return {
+                const post: PostMeta = {
                     slug,
                     title: data.title || slug,
                     date: data.date || "",
                 };
+                
+                // authorとavatarがあるときのみ追加
+                if (data.author) {
+                    post.author = data.author;
+                }
+                if (data.avatar) {
+                    post.avatar = data.avatar;
+                }
+                
+                return post;
             });
     } catch (error) {
         console.error("Error in getAllPosts:", error);

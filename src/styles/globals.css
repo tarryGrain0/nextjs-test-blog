@@ -63,3 +63,72 @@ body {
 article {
   margin-bottom: 2rem;
 }
+
+/* 著者情報のスタイル */
+.post-meta {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.author-info {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+  gap: 0.5rem;
+}
+
+.author-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+}
+
+.author-name {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+}
+
+/* 記事一覧用のスタイル */
+.post-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.post-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.post-author {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.post-author-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+}
+
+.post-author-name {
+  font-size: 0.8rem;
+  color: #666;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .post-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}

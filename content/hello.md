@@ -1,8 +1,10 @@
 ---
-title: "Hello World"
+title: "Hello"
 date: "2025-08-21"
 description: "最初の投稿です。Markdownで書いてビルド時に静的生成されます。"
 tags: ["intro", "nextjs", "markdown"]
+author: "Tarry"
+avatar: "/images/avatar.svg"
 ---
 
 # はじめに
