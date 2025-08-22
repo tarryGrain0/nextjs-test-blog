@@ -2,12 +2,14 @@
 import Head from "next/head";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { getPostSlugs, getPostBySlug, Post } from "../../lib/posts";
+import Header from "../../components/Header";
 
 type Props = { post: Post };
 
 export default function PostPage({ post }: Props) {
     return (
         <>
+            <Header />
             <Head>
                 <title>{post.title} | My Markdown Blog</title>
                 <meta name="description" content={post.title} />
