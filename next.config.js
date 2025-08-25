@@ -5,7 +5,7 @@ const nextConfig = {
     trailingSlash: true,       // 末尾スラッシュでGH Pagesの相対パス崩れを回避
     images: { unoptimized: true }, // 画像最適化を無効（export時の制約回避）
     // GitHub Pages でサブパス配下に配置する場合は basePath/assetPrefix を利用
-    // basePath: '/your-repo-name',
+    basePath: '/nextjs-test-blog',
     // assetPrefix: '/your-repo-name/',
 };
 module.exports = nextConfig;
