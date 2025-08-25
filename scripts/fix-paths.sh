@@ -11,6 +11,10 @@ find out -name "*.html" -type f -exec sed -i '' "s|src=\"/_next|src=\"$BASE_PATH
 find out -name "*.html" -type f -exec sed -i '' "s|href=\"/images|href=\"$BASE_PATH/images|g" {} \;
 find out -name "*.html" -type f -exec sed -i '' "s|src=\"/images|src=\"$BASE_PATH/images|g" {} \;
 
+# 内部リンクも修正 (ホームページと記事リンク)
+find out -name "*.html" -type f -exec sed -i '' "s|href=\"/\"|href=\"$BASE_PATH/\"|g" {} \;
+find out -name "*.html" -type f -exec sed -i '' "s|href=\"/posts/|href=\"$BASE_PATH/posts/|g" {} \;
+
 # JSONファイル内のパスも修正
 find out -name "*.json" -type f -exec sed -i '' "s|\"/_next|\"$BASE_PATH/_next|g" {} \;
 
