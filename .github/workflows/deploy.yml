@@ -3,8 +3,6 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 # GitHub Pagesにデプロイするための権限設定
 permissions:
@@ -31,15 +29,16 @@ jobs:
           node-version: '18'
           cache: 'npm'
 
-      - name: Install dependencies
-        run: npm ci
-
       - name: Setup Pages
         uses: actions/configure-pages@v4
         with:
-          # Automatically inject basePath in your Next.js configuration file and disable
-          # server side image optimization (https://nextjs.org/docs/api-reference/next/image#unoptimized).
-          static_exports: true
+          # Next.js用の静的サイトジェネレーターを指定
+          static_site_generator: next
+          # GitHub Pagesを自動的に有効化
+          enablement: true
+
+      - name: Install dependencies
+        run: npm ci
 
       - name: Build with Next.js
         run: npm run build
