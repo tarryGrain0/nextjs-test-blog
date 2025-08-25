@@ -37,20 +37,12 @@ jobs:
         run: npm run build
         env:
           NODE_ENV: production
-          GITHUB_ACTIONS: true
-          NEXT_PUBLIC_BASE_PATH: /nextjs-test-blog
-        
-      - name: Make script executable
-        run: chmod +x scripts/fix-paths.sh
         
       - name: Fix paths for GitHub Pages
         run: ./scripts/fix-paths.sh
         
-      - name: Check paths after fixing (debug)
-        run: |
-          echo "Checking paths in HTML files after fixing:"
-          grep -n "_next" out/index.html | head -5 || echo "No _next paths found"
-          grep -n "nextjs-test-blog" out/index.html | head -5 || echo "No nextjs-test-blog paths found"
+      - name: List build output (debug)
+        run: ls -la ./out
         
       - name: List build output (debug)
         run: ls -la ./out

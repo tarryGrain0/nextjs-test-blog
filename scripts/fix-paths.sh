@@ -7,6 +7,13 @@ echo "Fixing paths for GitHub Pages..."
 echo "Base path: $BASE_PATH"
 echo "Working directory: $(pwd)"
 echo "OS Type: $OSTYPE"
+
+# 出力ディレクトリの確認
+if [ ! -d "out" ]; then
+    echo "Error: out directory does not exist!"
+    exit 1
+fi
+
 echo "Contents of out directory:"
 ls -la out/
 
