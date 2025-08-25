@@ -24,6 +24,29 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Deployment
+
+このプロジェクトは GitHub Actions を使用して自動デプロイが設定されています。
+
+### GitHub Pages での公開
+
+1. GitHubリポジトリの設定で、GitHub Pagesを有効にしてください
+2. Source を "GitHub Actions" に設定してください
+3. `main` ブランチにプッシュすると自動的にデプロイされます
+
+リポジトリが組織アカウントやユーザーページでない場合は、`next.config.ts` の `basePath` と `assetPrefix` のコメントアウトを外して、適切なリポジトリ名を設定してください。
+
+### Vercel での公開
+
+Vercelでの公開を選択する場合：
+
+1. GitHub Secrets に以下を設定してください：
+   - `VERCEL_TOKEN`: Vercelアカウントトークン
+   - `ORG_ID`: VercelのOrganization ID
+   - `PROJECT_ID`: VercelのProject ID
+
+2. `.github/workflows/deploy.yml` を無効化し、`.github/workflows/vercel-deploy.yml` を使用してください
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

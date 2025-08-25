@@ -30,8 +30,8 @@ export default function Home({ posts }: Props) {
                   {p.author && (
                     <div className="post-author">
                       {p.avatar && (
-                        <img 
-                          src={p.avatar} 
+                        <img
+                          src={p.avatar}
                           alt={p.author}
                           className="post-author-avatar"
                         />
