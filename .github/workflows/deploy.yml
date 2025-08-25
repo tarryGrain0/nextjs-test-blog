@@ -37,7 +37,11 @@ jobs:
         run: npm run build
         env:
           NODE_ENV: production
+          GITHUB_ACTIONS: true
           NEXT_PUBLIC_BASE_PATH: /nextjs-test-blog
+        
+      - name: Fix paths for GitHub Pages
+        run: ./scripts/fix-paths.sh
         
       - name: List build output (debug)
         run: ls -la ./out

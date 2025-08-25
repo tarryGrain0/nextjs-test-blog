@@ -8,9 +8,6 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true
   },
-  // GitHub Pagesのベースパスを設定
-  basePath: '/nextjs-test-blog',
-  assetPrefix: '/nextjs-test-blog',
 };
 
 export default nextConfig;
